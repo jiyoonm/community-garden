@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 300 300" style="enable-background:new 0 0 300 300;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#E5B335;}
+	.st1{fill:#EA8686;}
+	.st2{fill:#FFFFFF;}
+	.st3{fill:#6EDDE5;}
+	.st4{fill:#A58961;}
+	.st5{fill:#E8E0C9;}
+	.st6{fill:#97C4C4;}
+</style>
+<g>
+	<rect x="44.98" y="121.21" class="st0" width="210.02" height="90.81"/>
+	<polygon class="st1" points="99.59,118.79 99.59,170.52 39.89,170.52 39.89,118.79 33.26,118.79 33.26,214.3 39.89,214.3 
+		39.89,174.5 99.59,174.5 99.59,214.3 106.22,214.3 106.22,118.79 	"/>
+	<polygon class="st1" points="260.1,118.79 260.1,170.52 200.4,170.52 200.4,118.79 193.77,118.79 193.77,214.3 200.4,214.3 
+		200.4,174.5 260.1,174.5 260.1,214.3 266.73,214.3 266.73,118.79 	"/>
+	<g>
+		<rect x="129.66" y="125.42" class="st2" width="40.67" height="86.6"/>
+		<rect x="155.7" y="145.33" class="st3" width="6.91" height="11.02"/>
+		<rect x="146.59" y="145.33" class="st3" width="6.46" height="11.02"/>
+		<rect x="155.7" y="159" class="st3" width="6.91" height="12"/>
+		<rect x="136.67" y="145.33" class="st3" width="7.26" height="11.02"/>
+		<rect x="146.59" y="159" class="st3" width="6.46" height="12"/>
+		<rect x="155.7" y="131.03" class="st3" width="6.91" height="11.65"/>
+		<rect x="136.67" y="159" class="st3" width="7.26" height="12"/>
+		<rect x="136.67" y="131.03" class="st3" width="7.26" height="11.65"/>
+		<rect x="146.59" y="131.03" class="st3" width="6.46" height="11.65"/>
+		<circle cx="166.3" cy="179.41" r="2.98"/>
+	</g>
+	<rect x="29.03" y="114.66" class="st4" width="241.93" height="7.36"/>
+	<g>
+		<polygon class="st5" points="15.88,112.75 151.96,87.33 284.11,112.82 		"/>
+		<path class="st6" d="M284.11,114.42l-268.24-0.07l-0.29-3.18L151.96,85.7l0.3,0.06l132.15,25.49L284.11,114.42z M33.16,111.16
+			l234.17,0.06L151.95,88.96L33.16,111.16z"/>
+	</g>
+</g>
+</svg>

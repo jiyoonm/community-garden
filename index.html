@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <title>Scrollytelling Template</title>
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://unpkg.com/scrollama"></script>
+
+</head>
+
+<body>
+
+    <div class="banner">
+
+        <div class="row">
+            <div class="column1">
+                <h1 class="type-heading-1">Community<br> Gardening in New York City:</h1>
+
+                <h3 class="type-heading-3"> a journey from alphabet city, to loisaida,<br> to the east village</h3>
+                <div class='type-body-1'><a href="https://github.com/jiyoonm">By Jiyoon Moon</a></div>
+
+            </div>
+            <div class="column3">
+
+            </div>
+            <div class="column2">
+                <div id="leaves">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post">
+        <p class='type-body-1'>
+            Many walking through the city may be surprised by the plethora of green spaces on every corner of the Lower East Side. The origin of these lively green spaces traces back to the 1970s and is synonymous with the plight of all New York’s boroughs, but especially
+            in the Lower East Side, Harlem, and Brooklyn, where buildings were neglected and demolished, producing vacant lots throughout communities. From then on, as dedicated members of communities fought back against government neglect, these lots
+            filled with rubble began transforming into gardens. Today, the city has about 600 gardens in total, and the highest concentration of these gardens remain in the Lower East Side.
+        </p>
+        <p class='type-body-1'>
+            Prior to the 1970s, Loisaida was comitted to hosuing lower-income residents such as Puerto Ricans, Chinese immigrants, and African-Americans. However, following the fiscal crisis in the 1970s, the city created tax-incentives to attract businesses to the
+            center of Manhattan, thus raising land values in surrounding residential areas like Greenwich Village and SoHo and encouraging wealthy individuals to inch into the upper regions of Loisaida. By 1980, developers were converting more than 3,700
+            Loisaida housing units to higher-income use with the help of government subsidies. Lower-income housing markets that were once so essential to the Loisaida began to collapse in many of the city's Latino communities.
+        </p>
+        <p class='type-body-1'>
+            These new tax incentives fueled gentrification in the valued areas near the corporate business centers while at the same time promoting decline and collapse in lower-income minority neighborhoods. As housing costs rose, hundreds of buildings were abandoned
+            by their owners or set on fire by landlords or their employees in order to collect insurance money, as they could no longer afford the necessary costs. Residents who had occupied the area for decades were forced to flee. Between 1976 and 1979,
+            the majority of the area's 454 abandoned properties taken by city government were located in tracts in Latino communities, many of the properties only a few blocks away from the new East Village residential buildings.</p>
+
+    </div>
+    </section>
+    <section>
+        <div id="map"></div>
+        <div id="story"></div>
+    </section>
+    <!-- <section class="section">
+
+        <div class="post">
+            <p class='type-body-1'>
+                Community gardens in New York act as an example of how public-access design can bring togetherness among neighborhoods and enable disenfranchised communities with a voice. New York’s community gardens were built out of sheer government neglect, as the
+                city turned its support to wealthier sections of the city in which they saw potential, while simultaneously leaving its lower-income communities to rot. This is why community gardens have withstood the test of time, despite multiple efforts
+                by The Department of Housing Preservation and Development to seize the land. They were founded by those who were passionate to save the city, despite the lack of support from the government. They serve as a symbol of pride for those neighborhoods
+                that were forgotten in the fiscal crisis of the 1970s and the surge of gentrification that followed it. The success of the gardens can be credited to strategic urban design, as gardens provide necessary balance for residents living in
+                an urban environment who wish to experience natural and peaceful spaces, and community involvement, as they often allow for lower-income residents to gain experience designing and managing spaces.
+            </p>
+        </div>
+    </section> -->
+    <div id="bottom">
+        <div id="footer">
+            <div id="about">About:</div> This website was created using HTML, CSS, JS, and <a href="https://docs.mapbox.com/mapbox-gl-js/api/">Mapbox GL JS</a>. You can find the code <a href="https://github.com/jiyoonm/WebAdvancedJS_Fall2020_moonj066/tree/main/ids">here</a>.
+            If you have any thoughts, comments or ideas, you can email me
+            <a href="mailto:moonj066@newschool.edu?Subject=Hello" target="_top">here</a>.</div>
+        <div id=citations>
+
+            <div id="about"> Citations:</div>
+            <ol>
+                <li><a href="https://www.worldcat.org/title/struggle-for-eden-community-gardens-in-new-york-city/oclc/606634043&referer=brief_results">The Struggle for Eden: Community Gardens in New York City</a>, Malve von Hassell</li>
+                <li><a href="https://unequalcities.org/wp-content/uploads/sites/17/2019/05/City-as-Borderland.pdf">City as borderland: Gentrification and the policing of Black and Latinx geographies in Oakland</a>, Margaret M Ramirez</li>
+                <li><a href="https://www-jstor-org.libproxy.newschool.edu/stable/1341787?seq=1#metadata_info_tab_contentswhiteness">Whiteness as Property</a>, Cheryl Harris</li>
+            </ol>
+        </div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script>
+        //Code developed from https://blog.mapbox.com/how-to-build-a-scrollytelling-map-ead6baf2cd1b
+        var layerTypes = {
+            'fill': ['fill-opacity'],
+            'line': ['line-opacity'],
+            'circle': ['circle-opacity', 'circle-stroke-opacity'],
+            'symbol': ['icon-opacity', 'text-opacity'],
+            'raster': ['raster-opacity'],
+            'fill-extrusion': ['fill-extrusion-opacity']
+        }
+
+        var alignments = {
+            'left': 'lefty',
+            'center': 'centered',
+            'right': 'righty'
+        }
+
+        function getLayerPaintType(layer) {
+            var layerType = map.getLayer(layer).type;
+            return layerTypes[layerType];
+        }
+
+        function setLayerOpacity(layer) {
+            var paintProps = getLayerPaintType(layer.layer);
+            paintProps.forEach(function(prop) {
+                map.setPaintProperty(layer.layer, prop, layer.opacity);
+            });
+        }
+
+        var story = document.getElementById('story');
+        var features = document.createElement('div');
+        features.classList.add(alignments[config.alignment]);
+        features.setAttribute('id', 'features');
+
+        var header = document.createElement('div');
+
+        if (config.title) {
+            var titleText = document.createElement('h1');
+            titleText.innerText = config.title;
+            header.appendChild(titleText);
+        }
+
+        if (config.subtitle) {
+            var subtitleText = document.createElement('h2');
+            subtitleText.innerText = config.subtitle;
+            header.appendChild(subtitleText);
+        }
+
+        if (config.byline) {
+            var bylineText = document.createElement('p');
+            bylineText.innerText = config.byline;
+            header.appendChild(bylineText);
+        }
+
+        if (header.innerText.length > 0) {
+            header.classList.add(config.theme);
+            header.setAttribute('id', 'header');
+            story.appendChild(header);
+        }
+
+        config.chapters.forEach((record, idx) => {
+            var container = document.createElement('div');
+            var chapter = document.createElement('div');
+
+            if (record.title) {
+                var title = document.createElement('h3');
+                title.innerText = record.title;
+                chapter.appendChild(title);
+            }
+
+            if (record.image) {
+                var image = new Image();
+                image.src = record.image;
+                chapter.appendChild(image);
+            }
+
+            if (record.description) {
+                var story = document.createElement('p');
+                story.innerHTML = record.description;
+                chapter.appendChild(story);
+            }
+
+            container.setAttribute('id', record.id);
+            container.classList.add('step');
+            if (idx === 0) {
+                container.classList.add('active');
+            }
+
+            chapter.classList.add(config.theme);
+            container.appendChild(chapter);
+            features.appendChild(container);
+        });
+
+        story.appendChild(features);
+
+        var footer = document.createElement('div');
+
+        if (config.footer) {
+            var footerText = document.createElement('p');
+            footerText.innerHTML = config.footer;
+            footer.appendChild(footerText);
+        }
+
+        if (footer.innerText.length > 0) {
+            footer.classList.add(config.theme);
+            footer.setAttribute('id', 'footer');
+            story.appendChild(footer);
+        }
+
+        mapboxgl.accessToken = config.accessToken;
+
+        const transformRequest = (url) => {
+            const hasQuery = url.indexOf("?") !== -1;
+            const suffix = hasQuery ? "&pluginName=journalismScrollytelling" : "?pluginName=journalismScrollytelling";
+            return {
+                url: url + suffix
+            }
+        }
+
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: config.style,
+            center: config.chapters[0].location.center,
+            zoom: config.chapters[0].location.zoom,
+            bearing: config.chapters[0].location.bearing,
+            pitch: config.chapters[0].location.pitch,
+            scrollZoom: false,
+            transformRequest: transformRequest
+        });
+
+        var marker = new mapboxgl.Marker();
+        if (config.showMarkers) {
+            marker.setLngLat(config.chapters[0].location.center).addTo(map);
+        }
+
+        // instantiate the scrollama
+        var scroller = scrollama();
+
+        map.on("load", function() {
+            // setup the instance, pass callback functions
+            scroller
+                .setup({
+                    step: '.step',
+                    offset: 0.5,
+                    progress: true
+                })
+                .onStepEnter(response => {
+                    var chapter = config.chapters.find(chap => chap.id === response.element.id);
+                    response.element.classList.add('active');
+                    map.flyTo(chapter.location);
+                    if (config.showMarkers) {
+                        marker.setLngLat(chapter.location.center);
+                    }
+                    if (chapter.onChapterEnter.length > 0) {
+                        chapter.onChapterEnter.forEach(setLayerOpacity);
+                    }
+                })
+                .onStepExit(response => {
+                    var chapter = config.chapters.find(chap => chap.id === response.element.id);
+                    response.element.classList.remove('active');
+                    if (chapter.onChapterExit.length > 0) {
+                        chapter.onChapterExit.forEach(setLayerOpacity);
+                    }
+                });
+        });
+
+        // setup resize event
+        window.addEventListener('resize', scroller.resize);
+    </script>
+
+</body>
+
+</html>
