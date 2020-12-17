@@ -84,12 +84,12 @@ header {
 .row {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
     padding-bottom: calc(80vmax / 15);
 }
 
 .column1 {
-    align-self: center;
     padding-top: calc(80vmax/5);
     width: 58%;
     padding-left: 10%;
